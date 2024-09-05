@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Hate Comment Filter",
+    "version": "1.0",
+    "description": "Filters hateful comments from the user's feed.",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "webRequest",
+      "webRequestBlocking"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
